@@ -37,7 +37,7 @@ zcat /usr/share/zabbix-sql-scripts/mysql/server.sql.gz | mysql -uzabbix -p zabbi
 ## Zabbix Server Yapılandırması
 
 sudo nano /etc/zabbix/zabbix_server.conf  
-DBPassword=zabbixpass satırı aktif hale getirilir  
+DBPassword={password} satırı aktif hale getirilir  
 
 ## Servisleri Başlatma
 
@@ -47,8 +47,8 @@ sudo systemctl enable zabbix-server zabbix-agent apache2
 ## Web Arayüz Kurulumu
 
 http://localhost/zabbix adresine gidilerek sihirbaz tamamlanır.  
-Varsayılan kullanıcı: Admin  
-Varsayılan şifre: zabbix  
+Varsayılan kullanıcı: {user_name} 
+Varsayılan şifre:  {password} 
 
 # Telegram Bot Kurulumu
 
@@ -74,7 +74,7 @@ requests.post(url, data=data)
 
 Script testi:  
 
-python3 scripts/telegram.py 123456789 "Test" "Zabbix Telegram testi başarılı"
+python3 scripts/telegram.py {CHAT_ID} "Test" "Zabbix Telegram testi başarılı"
 
 # Zabbix Arayüz Ayarları
 
